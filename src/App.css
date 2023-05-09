@@ -43,12 +43,16 @@
     height: 8rem;
 }
 
+.col-lg-6 {
+    max-width: 100%;
+}
+
 .home-title {
     margin-block: 20px;
     margin-left: 5px;
 }
 
 .home-indication {
-    margin-block: 20px;
+    margin-block: 50px;
     text-align: center;
 }

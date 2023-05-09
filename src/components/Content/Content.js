@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 
 function Content() {
 
-    // Creamos estados para movies
+    // Creamos estados 
     const [productsData, setProductsData] = useState([]);
     const [usersData, setUsersData] = useState([]);
     const [allData, setAllData] = useState([]);
@@ -38,9 +38,10 @@ function Content() {
             setUsersData(data);
 
         });
-
+ 
     }, []);
 
+    // Cuando tengo los datos de la API para productos y usuarios, actualizo los datos que utilizan los componentes
     useEffect(() => {
 
         let info = [];
@@ -89,7 +90,7 @@ function Content() {
                     <>
 
                         <div className="home-title">
-                            <h5 className="m-0 font-weight-bold text-gray-800">Bienvenido al dashboard de Vivero Federal:</h5>
+                            <h5 className="m-0 font-weight-bold text-gray-800">Bienvenido al dashboard de Vivero Federal</h5>
                         </div>
 
                         <ContentRowData data={allData} />
@@ -102,7 +103,11 @@ function Content() {
 
                 } />
 
-                <Route path='/lastProduct' Component={LastProductInDb} />
+                <Route path='/lastProduct' element={
+                    
+                        <LastProductInDb productDetail={productsData.products ? productsData.products[0].detail : null} />
+
+                } />
                 <Route path='/categories' Component={CategoriesInDb} />
                 <Route path='/allProducts' Component={Products} />
                 <Route path='/search' Component={SearchProducts} />
