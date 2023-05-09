@@ -27,8 +27,7 @@ function Card(props) {
 Card.propTypes = {
     titulo: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
-    cifra: PropTypes.string.isRequired,
-    icono: PropTypes.oneOf(["fas fa-film fa-2x text-gray-300", "fas fa-award fa-2x text-gray-300", "fas fa-user fa-2x text-gray-300"]).isRequired
+    cifra: PropTypes.string.isRequired
 };
 
 export default Card;

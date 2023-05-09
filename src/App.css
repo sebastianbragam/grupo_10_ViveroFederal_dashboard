@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+/* Personalizado por Vivero Federal */
+
+.sidebar-brand {
+    height: 24rem;
+}

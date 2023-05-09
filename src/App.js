@@ -1,5 +1,5 @@
-import './App.css';
 import './assets/css/app.css';
+import './App.css';
 import SideBar from './components/SideBar/SideBar';
 import TopBar from './components/TopBar/TopBar';
 import Footer from './components/Footer/Footer';

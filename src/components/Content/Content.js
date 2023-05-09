@@ -1,43 +1,87 @@
-import ContentRowMovies from './subcomponents/ContentRowMovies/ContentRowMovies';
+import ContentRowData from './subcomponents/ContentRowData/ContentRowData';
 import LastMovieInDb from './subcomponents/LastMovieInDb';
 import GenresInDb from './subcomponents/GenresInDb/GenresInDb';
 import Movies from './subcomponents/Movies/Movies';
 import SearchMovies from './subcomponents/SearchMovies';
 import NotFound from './subcomponents/NotFound';
 import { Routes, Route } from 'react-router-dom';
-
-let moviesData = [ // Datos inventados para mostrar nomás
-    {
-        titulo: "Movies in Database",
-        cifra: "21",
-        icono: "fas fa-film fa-2x text-gray-300",
-        color: "primary"
-    },
-    {
-        titulo: "Total Awards",
-        cifra: "79",
-        icono: "fas fa-award fa-2x text-gray-300",
-        color: "success"
-    },
-    {
-        titulo: "Actors Quantity",
-        cifra: "49",
-        icono: "fas fa-user fa-2x text-gray-300",
-        color: "warning"
-    }
-];
+import { useState, useEffect } from 'react';
 
 function Content() {
+
+    // Creamos estados para movies
+    const [productsData, setProductsData] = useState([]);
+    const [usersData, setUsersData] = useState([]);
+    const [allData, setAllData] = useState([]);
+
+    // API call
+    const apiCall = (url, callback) => {
+
+        fetch(url)
+            .then(result => result.json())
+            .then(data => callback(data))
+            .catch(error => console.log(error));
+
+    }
+
+    // Llamado a la API para recuperar los datos de los totales
+    useEffect(() => {
+
+        apiCall('http://localhost:3002/api/products', (data) => {
+
+            setProductsData(data);
+
+        });
+
+        apiCall('http://localhost:3002/api/users', (data) => {
+
+            setUsersData(data);
+
+        });
+
+    }, []);
+
+    useEffect(() => {
+
+        let info = [];
+
+        if (productsData.length !== 0 && usersData.length !== 0) {
+
+            let productsInfo = {
+                titulo: "Productos totales",
+                cifra: productsData.meta.count.toString(),
+                icono: "fas fa-seedling fa-2x text-gray-300",
+                color: "success"
+            };
+            info.push(productsInfo);
+    
+            let usersInfo = {
+                titulo: "Usuarios totales",
+                cifra: usersData.meta.count.toString(),
+                icono: "fas fa-user fa-2x text-gray-300",
+                color: "primary"
+            };
+            info.push(usersInfo);
+    
+            let categoriesInfo = {
+                titulo: "Categorías totales",
+                cifra: productsData.countByCategory.length.toString(),
+                icono: "fas fa-bars fa-2x text-gray-300",
+                color: "warning"
+            };
+            info.push(categoriesInfo);
+
+            setAllData(info);
+
+        }
+
+    }, [productsData, usersData]);
 
     return (
 
         <div className="container-fluid">
 
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
-            </div>
-
-            <ContentRowMovies moviesData={moviesData} />
+            <ContentRowData data={allData} />
 
             <div className="row">
 
@@ -63,7 +107,7 @@ function Content() {
 
             </div>
 
-            
+
             {/* Cuando estamos en Home, también renderizo una fila con el componente Movies, sino no renderizo nada */}
             <Routes>
 
@@ -72,6 +116,7 @@ function Content() {
                     <div className="row">
 
                         <Movies />
+                        <SearchMovies />
 
                     </div>
 
