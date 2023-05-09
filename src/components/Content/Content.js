@@ -38,7 +38,7 @@ function Content() {
             setUsersData(data);
 
         });
- 
+
     }, []);
 
     // Cuando tengo los datos de la API para productos y usuarios, actualizo los datos que utilizan los componentes
@@ -104,11 +104,15 @@ function Content() {
                 } />
 
                 <Route path='/lastProduct' element={
-                    
-                        <LastProductInDb productDetail={productsData.products ? productsData.products[0].detail : null} />
+
+                    <LastProductInDb productDetail={productsData.products ? productsData.products[0].detail : null} />
 
                 } />
-                <Route path='/categories' Component={CategoriesInDb} />
+                <Route path='/categories' element={
+
+                    <CategoriesInDb categories={productsData.countByCategory ? productsData.countByCategory : []} />
+
+                } />
                 <Route path='/allProducts' Component={Products} />
                 <Route path='/search' Component={SearchProducts} />
                 <Route path='*' Component={NotFound} />

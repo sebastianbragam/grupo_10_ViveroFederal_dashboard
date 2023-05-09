@@ -6,7 +6,7 @@ function Category(props) {
             
             <div className="card bg-dark text-white shadow">
                 <div className="card-body">
-                    {props.name}
+                    {props.category + ": " + props.totalProducts}
                 </div>
             </div>
             

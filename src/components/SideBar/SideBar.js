@@ -36,7 +36,7 @@ function SideBar() {
             <li className="nav-item">
                 <Link className="nav-link" to="/categories">
                     <i className="fas fa-fw fa-bars"></i>
-                    <span>Categorías</span>
+                    <span>Productos por categoría</span>
                 </Link>
             </li>
 
