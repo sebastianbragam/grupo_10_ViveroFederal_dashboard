@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Genre from './subcomponents/Genre';
+import Category from './subcomponents/Category';
 
-class GenresInDb extends Component {
+class CategoriesInDb extends Component {
 
     constructor() {
 
@@ -21,14 +21,14 @@ class GenresInDb extends Component {
                 <div className="card shadow mb-4">
 
                     <div className="card-header py-3">
-                        <h5 className="m-0 font-weight-bold text-gray-800" onMouseOver={() => this.cambiarFondoCard()} onMouseLeave={() => this.cambiarFondoCard()} >Genres in Database</h5>
+                        <h5 className="m-0 font-weight-bold text-gray-800" onMouseOver={() => this.cambiarFondoCard()} onMouseLeave={() => this.cambiarFondoCard()}>Categorías en la base de datos</h5>
                     </div>
                     
                     <div className="card-body genre-card">
 
                         <div className="row">
 
-                            {this.state.genresList.map((genre, index) => <Genre key={index} {...genre} />) /* acá usamos destructuring para enviar todas las props del género al componente */ } 
+                            {this.state.genresList.map((genre, index) => <Category key={index} {...genre} />) /* acá usamos destructuring para enviar todas las props del género al componente */ } 
 
                         </div>
 
@@ -67,4 +67,4 @@ class GenresInDb extends Component {
 
 }
 
-export default GenresInDb;
+export default CategoriesInDb;

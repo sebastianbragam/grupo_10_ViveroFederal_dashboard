@@ -27,21 +27,21 @@ function SideBar() {
             <div className="sidebar-heading">Acciones</div>
 
             <li className="nav-item">
-                <Link className="nav-link collapsed" to="/last">
+                <Link className="nav-link collapsed" to="/lastProduct">
                     <i className="fas fa-fw fa-seedling"></i>
                     <span>Último producto</span>
                 </Link>
             </li>
 
             <li className="nav-item">
-                <Link className="nav-link" to="/genres">
+                <Link className="nav-link" to="/categories">
                     <i className="fas fa-fw fa-bars"></i>
                     <span>Categorías</span>
                 </Link>
             </li>
 
             <li className="nav-item">
-                <Link className="nav-link" to="/movies">
+                <Link className="nav-link" to="/allProducts">
                     <i className="fas fa-fw fa-table"></i>
                     <span>Todos los productos</span>
                 </Link>

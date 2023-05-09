@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Row from "./subcomponents/Row";
 
-class Movies extends Component {
+class Products extends Component {
 
     constructor() {
 
@@ -21,7 +21,7 @@ class Movies extends Component {
                 <div className="card shadow mb-4">
 
                     <div className="card-header py-3">
-                        <h5 className="m-0 font-weight-bold text-gray-800">Movies in Database</h5>
+                        <h5 className="m-0 font-weight-bold text-gray-800">Productos en la base de datos</h5>
                     </div>
 
                     <div className="card-body">
@@ -89,4 +89,4 @@ class Movies extends Component {
 
 }
 
-export default Movies;
+export default Products;

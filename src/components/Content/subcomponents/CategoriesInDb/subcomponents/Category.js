@@ -1,4 +1,4 @@
-function Genre(props) {
+function Category(props) {
 
     return (
 
@@ -16,4 +16,4 @@ function Genre(props) {
 
 }
 
-export default Genre;
+export default Category;

@@ -1,8 +1,8 @@
 import ContentRowData from './subcomponents/ContentRowData/ContentRowData';
-import LastMovieInDb from './subcomponents/LastMovieInDb';
-import GenresInDb from './subcomponents/GenresInDb/GenresInDb';
-import Movies from './subcomponents/Movies/Movies';
-import SearchMovies from './subcomponents/SearchMovies';
+import LastProductInDb from './subcomponents/LastProductInDb';
+import CategoriesInDb from './subcomponents/CategoriesInDb/CategoriesInDb';
+import Products from './subcomponents/Products/Products';
+import SearchProducts from './subcomponents/SearchProducts';
 import NotFound from './subcomponents/NotFound';
 import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -54,7 +54,7 @@ function Content() {
                 color: "success"
             };
             info.push(productsInfo);
-    
+
             let usersInfo = {
                 titulo: "Usuarios totales",
                 cifra: usersData.meta.count.toString(),
@@ -62,7 +62,7 @@ function Content() {
                 color: "primary"
             };
             info.push(usersInfo);
-    
+
             let categoriesInfo = {
                 titulo: "Categorías totales",
                 cifra: productsData.countByCategory.length.toString(),
@@ -81,48 +81,32 @@ function Content() {
 
         <div className="container-fluid">
 
-            <ContentRowData data={allData} />
-
-            <div className="row">
-
-                {/* Para mostrar contenido específico, sino Home */}
-                <Routes>
-
-                    <Route path='/' element={
-
-                        <>
-                            <LastMovieInDb />
-                            <GenresInDb />
-                        </>
-
-                    } />
-
-                    <Route path='/last' Component={LastMovieInDb} />
-                    <Route path='/genres' Component={GenresInDb} />
-                    <Route path='/movies' Component={Movies} />
-                    <Route path='/search' Component={SearchMovies} />
-                    <Route path='*' Component={NotFound} />
-
-                </Routes>
-
-            </div>
-
-
-            {/* Cuando estamos en Home, también renderizo una fila con el componente Movies, sino no renderizo nada */}
+            {/* Para mostrar contenido específico, sino Home */}
             <Routes>
 
                 <Route path='/' element={
 
-                    <div className="row">
+                    <>
 
-                        <Movies />
-                        <SearchMovies />
+                        <div className="home-title">
+                            <h5 className="m-0 font-weight-bold text-gray-800">Bienvenido al dashboard de Vivero Federal:</h5>
+                        </div>
 
-                    </div>
+                        <ContentRowData data={allData} />
+
+                        <div className="home-indication">
+                            <p className="m-0 font-weight-bold text-gray-800">Por favor, selecciona una opción en el menú lateral para verla en detalle.</p>
+                        </div>
+
+                    </>
 
                 } />
 
-                <Route path='*' element />
+                <Route path='/lastProduct' Component={LastProductInDb} />
+                <Route path='/categories' Component={CategoriesInDb} />
+                <Route path='/allProducts' Component={Products} />
+                <Route path='/search' Component={SearchProducts} />
+                <Route path='*' Component={NotFound} />
 
             </Routes>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 
-function SearchMovies() {
+function SearchProducts() {
 
     // Creamos estados para movies y keyword
     const [movies, setMovies] = useState([]);
@@ -56,7 +56,7 @@ function SearchMovies() {
             <div className="card shadow mb-4">
 
                 <div className="card-header py-3">
-                    <h5 className="m-0 font-weight-bold text-gray-800">Genres in Database</h5>
+                    <h5 className="m-0 font-weight-bold text-gray-800">Buscador de productos</h5>
                 </div>
 
                 <div className="card-body genre-card">
@@ -176,4 +176,4 @@ function SearchMovies() {
 
 }
 
-export default SearchMovies;
+export default SearchProducts;

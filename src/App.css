@@ -40,5 +40,15 @@
 /* Personalizado por Vivero Federal */
 
 .sidebar-brand {
-    height: 24rem;
+    height: 8rem;
+}
+
+.home-title {
+    margin-block: 20px;
+    margin-left: 5px;
+}
+
+.home-indication {
+    margin-block: 20px;
+    text-align: center;
 }
