@@ -1,62 +1,15 @@
-import React, { Component } from 'react';
+import { useEffect, useState } from "react";
 import Row from "./subcomponents/Row";
 
-class Products extends Component {
+function Products(props) {
 
-    constructor() {
+    // Creamos estados
+    const [products, setProducts] = useState([]);
+    const [page, setPage] = useState([1]);
+    const [morePages, setMorePages] = useState([]);
 
-        super();
-        this.state = {
-            moviesList: []
-        };
-
-    }
-
-    render(props) {
-
-        return (
-
-            <div className="col-lg-6 mb-4">
-
-                <div className="card shadow mb-4">
-
-                    <div className="card-header py-3">
-                        <h5 className="m-0 font-weight-bold text-gray-800">Todos los productos</h5>
-                    </div>
-
-                    <div className="card-body">
-
-                        <table className="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Titulo</th>
-                                    <th scope="col">Duración</th>
-                                    <th scope="col">Rating</th>
-                                    <th scope="col">Género</th>
-                                    <th scope="col">Premios</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    this.state.moviesList.map((movie, index) =>
-                                        <Row key={index} title={movie.title} length={movie.length} rating={movie.rating} genre={movie.genre} awards={movie.awards} />
-                                    )
-                                }
-                            </tbody>
-                        </table>
-
-                    </div>
-
-                </div>
-                
-            </div>
-
-        )
-
-    }
-
-
-    apiCall(url, callback) {
+    // API call
+    const apiCall = (url, callback) => {
 
         fetch(url)
             .then(result => result.json())
@@ -65,27 +18,105 @@ class Products extends Component {
 
     }
 
-    obtenerPeliculas = (data) => {
+    // Obtenemos los datos de los productos a pasar al componente Row una vez que estén listos
+    useEffect(() => {
 
-        let moviesList = data.data;
+        apiCall('http://localhost:3002/api/products', (data) => {
 
-        // Convierto el género de objeto a string, para que lo acepte el traspaso entre componentes
-        moviesList.forEach(movie => {
-            if (movie.genre) {
-                movie.genre = movie.genre.name
-            } else {
-                movie.genre = "Sin datos"
+            setProducts(data.products);
+
+            // Seteamos esta variable para saber si existen más páginas
+            if (data.meta.next) {
+                setMorePages(true);
             }
+            else {
+                setMorePages(false);
+            }
+
         });
 
-        this.setState({ moviesList: moviesList });
+    }, []);
+
+    // Actualizamos los datos cuando cambia el número de página
+    useEffect(() => {
+
+        apiCall('http://localhost:3002/api/products?page=' + page, (data) => {
+
+            setProducts(data.products);
+
+            // Seteamos esta variable para saber si existen más páginas
+            if (data.meta.next) {
+                setMorePages(true);
+            }
+            else {
+                setMorePages(false);
+            }
+
+        });
+
+    }, [page]);
+
+    // Función que pasa a la página siguiente
+    const nextPage = () => {
+
+        setPage([parseInt(page) + 1]);
 
     }
 
-    componentDidMount() {
-        this.apiCall('http://localhost:3001/api/movies', this.obtenerPeliculas);
+    // Función que pasa a la página anterior
+    const prevPage = () => {
+
+        setPage([parseInt(page) - 1]);
+
     }
 
+    return (
+
+        <div className="col-lg-6 mb-4">
+
+            <div className="card shadow mb-4">
+
+                <div className="card-header py-3">
+                    <h5 className="m-0 font-weight-bold text-gray-800">Todos los productos</h5>
+                </div>
+
+                <div className="card-body">
+
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Categoría</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                products.map((product, index) =>
+                                    <Row key={index} {...product} />
+                                )
+                            }
+                        </tbody>
+                    </table>
+
+                    <div className="button-section">
+
+                        {/*<!-- Botón página anterior -->*/}
+                        {page[0] !== 1 && <button className="btn btn-outline-secondary btn-sm" onClick={prevPage}>Página anterior</button>}
+
+                        {/*<!-- Botón página siguiente -->*/}
+                        {morePages && <button className="btn btn-outline-secondary btn-sm" onClick={nextPage}>Página siguiente</button>}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    )
 
 }
 

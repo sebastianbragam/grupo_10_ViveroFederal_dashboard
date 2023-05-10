@@ -6,9 +6,9 @@ function CategoriesInDb(props) {
     // Creamos estados
     const [categories, setCategories] = useState([]);
 
+    // Seteamos las categorías a pasar al componente Category una vez que estén listos los datos
     useEffect(() => {
 
-        console.log(props.categories);
         setCategories(props.categories);
 
     }, [props.categories]);
@@ -28,7 +28,6 @@ function CategoriesInDb(props) {
                     <div className="row">
 
                         { categories.map((category, index) => <Category key={index} {...category} />)}
-                        
 
                     </div>
 

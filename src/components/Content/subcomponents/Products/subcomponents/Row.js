@@ -5,11 +5,10 @@ function Row(props) {
     return (
 
         <tr>
-            <th scope="row">{props.title}</th>
-            <td>{props.length}</td>
-            <td>{props.rating}</td>
-            <td>{props.genre}</td>
-            <td>{props.awards}</td>
+            <th scope="row">{props.id}</th>
+            <td>{props.name}</td>
+            <td>{props.description}</td>
+            <td>{props.category.name}</td>
         </tr>
 
     )
@@ -17,18 +16,15 @@ function Row(props) {
 }
 
 Row.propTypes = {
-    title: PropTypes.string.isRequired,
-    length: PropTypes.number,
-    rating: PropTypes.string,
-    genre: PropTypes.string,
-    awards: PropTypes.number
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
 }
 
 Row.defaultProps = {
-    length: "-",
-    rating: "-",
-    genre: "-",
-    awards: "-"
+    id: "-",
+    name: "-",
+    description: "-"
 }
 
 export default Row;

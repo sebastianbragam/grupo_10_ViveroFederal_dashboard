@@ -37,16 +37,19 @@
   }
 }
 
-/* Personalizado por Vivero Federal */
+/* Personalizado por Vivero Federal. Algunos estilos de Bootstrap se pisan */
 
+/* Para el logo */
 .sidebar-brand {
-    height: 8rem;
+    height: 8rem !important;
 }
 
+/* Para cards con ancho del 100% */
 .col-lg-6 {
     max-width: 100%;
 }
 
+/* Para título y texto de "home" */
 .home-title {
     margin-block: 20px;
     margin-left: 5px;
@@ -55,4 +58,20 @@
 .home-indication {
     margin-block: 50px;
     text-align: center;
+}
+
+
+/* Para botones de listado de productos */
+.button-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn {
+    margin-inline: 20px;
+}
+
+.btn-outline-secondary.focus, .btn-outline-secondary:focus {
+    box-shadow: none;
 }

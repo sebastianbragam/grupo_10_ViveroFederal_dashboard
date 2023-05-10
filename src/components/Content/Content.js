@@ -113,7 +113,11 @@ function Content() {
                     <CategoriesInDb categories={productsData.countByCategory ? productsData.countByCategory : []} />
 
                 } />
-                <Route path='/allProducts' Component={Products} />
+                <Route path='/allProducts' element={
+
+                    <Products />
+
+                } />
                 <Route path='/search' Component={SearchProducts} />
                 <Route path='*' Component={NotFound} />
 
