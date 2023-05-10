@@ -5,7 +5,7 @@ function SideBar() {
 
     return (
 
-        <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul className="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <Link className="sidebar-brand d-flex align-items-center justify-content-center logo" to="/">
                 <div className="sidebar-brand-icon">
@@ -13,43 +13,34 @@ function SideBar() {
                 </div>
             </Link>
 
-            <hr className="sidebar-divider my-0" />
-
-            <li className="nav-item active">
-                <Link className="nav-link" to="/">
-                    <i className="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard - Vivero Federal</span>
-                </Link>
-            </li>
-
             <hr className="sidebar-divider" />
 
             <div className="sidebar-heading">Acciones</div>
 
             <li className="nav-item">
                 <Link className="nav-link collapsed" to="/lastProduct">
-                    <i className="fas fa-fw fa-seedling"></i>
+                    <i className="fas fa-fw fa-seedling sidebar-item"></i>
                     <span>Último producto</span>
                 </Link>
             </li>
 
             <li className="nav-item">
                 <Link className="nav-link" to="/categories">
-                    <i className="fas fa-fw fa-bars"></i>
+                    <i className="fas fa-fw fa-bars sidebar-item"></i>
                     <span>Productos por categoría</span>
                 </Link>
             </li>
 
             <li className="nav-item">
                 <Link className="nav-link" to="/allProducts">
-                    <i className="fas fa-fw fa-table"></i>
+                    <i className="fas fa-fw fa-table sidebar-item"></i>
                     <span>Todos los productos</span>
                 </Link>
             </li>
 
             <li className="nav-item">
                 <Link className="nav-link collapsed" to="/search">
-                    <i className="fas fa-fw fa-search"></i>
+                    <i className="fas fa-fw fa-search sidebar-item"></i>
                     <span>Buscar productos</span>
                 </Link>
             </li>

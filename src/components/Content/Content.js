@@ -51,7 +51,7 @@ function Content() {
             let productsInfo = {
                 titulo: "Productos totales",
                 cifra: productsData.meta.count.toString(),
-                icono: "fas fa-seedling fa-2x text-gray-300",
+                icono: "fas fa-seedling fa-2x",
                 color: "success"
             };
             info.push(productsInfo);
@@ -59,7 +59,7 @@ function Content() {
             let usersInfo = {
                 titulo: "Usuarios totales",
                 cifra: usersData.meta.count.toString(),
-                icono: "fas fa-user fa-2x text-gray-300",
+                icono: "fas fa-user fa-2x",
                 color: "primary"
             };
             info.push(usersInfo);
@@ -67,7 +67,7 @@ function Content() {
             let categoriesInfo = {
                 titulo: "Categorías totales",
                 cifra: productsData.countByCategory.length.toString(),
-                icono: "fas fa-bars fa-2x text-gray-300",
+                icono: "fas fa-bars fa-2x",
                 color: "warning"
             };
             info.push(categoriesInfo);
@@ -90,13 +90,13 @@ function Content() {
                     <>
 
                         <div className="home-title">
-                            <h5 className="m-0 font-weight-bold text-gray-800">Bienvenido al dashboard de Vivero Federal</h5>
+                            <h5 className="m-0 font-weight-bold">Bienvenido al dashboard de Vivero Federal</h5>
                         </div>
 
                         <ContentRowData data={allData} />
 
                         <div className="home-indication">
-                            <p className="m-0 font-weight-bold text-gray-800">Por favor, selecciona una opción en el menú lateral para verla en detalle.</p>
+                            <p className="m-0 font-weight-bold">Por favor, selecciona una opción en el menú lateral para verla en detalle.</p>
                         </div>
 
                     </>

@@ -40,8 +40,100 @@
 /* Personalizado por Vivero Federal. Algunos estilos de Bootstrap se pisan */
 
 /* Para el logo */
-.sidebar-brand {
-    height: 8rem !important;
+.sidebar .sidebar-brand {
+    height: 8rem;
+}
+
+/* Para los colores y alguna animación */
+body {
+    color: #3C6255;
+}
+
+.border-left {
+    border-left: 0.25rem solid #3C6255 !important;
+}
+
+.card {
+    background-color: #DAE2B6;
+    border: solid 1px #3C6255;
+    border-radius: 3px;
+}
+
+.card-body {
+    background-color: #DAE2B6;
+}
+
+.card-header {
+    background-color: #DAE2B6;
+    border: none;
+}
+
+#wrapper #content-wrapper {
+    background-color: #FFFBE9;
+}
+
+.bg-light-yellow {
+    background-color: #F4EAD5;
+}
+
+.sidebar {
+    background-color: #F4EAD5;
+    border-right: 2px solid #3C6255;
+}
+
+.sidebar-dark hr.sidebar-divider {
+    border-top: 1px solid #3C6255;
+}
+
+.sidebar-dark .sidebar-heading {
+    color: #3C6255;
+}
+
+.sidebar-dark .nav-item .nav-link {
+    color: #3C6255;
+}
+
+.sidebar-dark .nav-item .nav-link:hover {
+    color: #3C6255;
+}
+
+.sidebar-dark .nav-item .nav-link:visited {
+    color: #3C6255;
+}
+
+.sidebar-dark .nav-item .nav-link i {
+    position: relative;
+    right: 0px;
+    color: #3C6255;
+    transition: all 0.3s;
+}
+
+.sidebar-dark .nav-item .nav-link:hover i {
+    position: relative;
+    color: #3C6255;
+    right: 2px;
+}
+
+.sidebar-dark .nav-item .nav-link:visited i {
+    color: #3C6255;
+}
+
+.table {
+    color: #3C6255;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-top: 2px solid #3C6255;
+    border-bottom: 2px solid #3C6255;
+}
+
+.table td, .table th {
+    border-top: 1px solid #3C6255;
+}
+
+tr {
+    border-color: #3C6255;
 }
 
 /* Para cards con ancho del 100% */
@@ -60,6 +152,10 @@
     text-align: center;
 }
 
+/* Para título de TopBar */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+}
 
 /* Para botones de listado de productos */
 .button-section {
@@ -74,4 +170,15 @@
 
 .btn-outline-secondary.focus, .btn-outline-secondary:focus {
     box-shadow: none;
+}
+
+.btn-outline-secondary {
+    color: #3C6255;
+    border-color: #3C6255;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #3C6255;
+    color: #DAE2B6;
+    border-color: #DAE2B6;
 }
