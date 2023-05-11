@@ -51,24 +51,21 @@ function Content() {
             let productsInfo = {
                 titulo: "Productos totales",
                 cifra: productsData.meta.count.toString(),
-                icono: "fas fa-seedling fa-2x",
-                color: "success"
+                icono: "fas fa-seedling fa-2x"
             };
             info.push(productsInfo);
 
             let usersInfo = {
                 titulo: "Usuarios totales",
                 cifra: usersData.meta.count.toString(),
-                icono: "fas fa-user fa-2x",
-                color: "primary"
+                icono: "fas fa-user fa-2x"
             };
             info.push(usersInfo);
 
             let categoriesInfo = {
                 titulo: "Categorías totales",
                 cifra: productsData.countByCategory.length.toString(),
-                icono: "fas fa-bars fa-2x",
-                color: "warning"
+                icono: "fas fa-bars fa-2x"
             };
             info.push(categoriesInfo);
 

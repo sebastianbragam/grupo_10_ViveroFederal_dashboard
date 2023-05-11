@@ -6,7 +6,7 @@ function ContentRowData(props) {
 
         <div className="row">
 
-            {props.data.map((data, i) => <Card key={data.titulo + i} titulo={data.titulo} cifra={data.cifra} color={data.color} icono={data.icono} />)}
+            {props.data.map((data, i) => <Card key={data.titulo + i} titulo={data.titulo} cifra={data.cifra} icono={data.icono} />)}
 
         </div>
 
