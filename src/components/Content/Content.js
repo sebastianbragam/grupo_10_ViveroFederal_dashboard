@@ -65,7 +65,7 @@ function Content() {
             let categoriesInfo = {
                 titulo: "Categorías totales",
                 cifra: productsData.countByCategory.length.toString(),
-                icono: "fas fa-bars fa-2x"
+                icono: "far fa-list-alt fa-2x"
             };
             info.push(categoriesInfo);
 
