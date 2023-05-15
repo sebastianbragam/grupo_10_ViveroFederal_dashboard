@@ -26,7 +26,6 @@ function Card(props) {
 
 Card.propTypes = {
     titulo: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
     cifra: PropTypes.string.isRequired
 };
 

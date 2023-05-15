@@ -91,10 +91,10 @@ function SearchProducts() {
                                     < div className="row">
 
                                         <div className="col-12">
-                                            <h2>Películas para la palabra: {keyword}</h2>
+                                            <h2>Productos para la palabra: {keyword}</h2>
                                         </div>
 
-                                        {/* Listado de películas */}
+                                        {/* Listado de productos */}
                                         {
                                             products && products.map((product, i) => {
 
@@ -124,7 +124,7 @@ function SearchProducts() {
 
                                     </div>
 
-                                    {!loading[0] && !products && <div className="alert alert-warning text-center">No se encontraron películas.</div>}
+                                    {!loading[0] && products.length === 0 && <div className="alert alert-warning text-center">No se encontraron productos.</div>}
 
                                 </>
 

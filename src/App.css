@@ -182,3 +182,9 @@ tr {
     color: #DAE2B6;
     border-color: #DAE2B6;
 }
+
+/* Para el buscador */
+
+.alert-warning {
+    margin-top: 25px;
+}
