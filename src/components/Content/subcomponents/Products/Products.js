@@ -21,7 +21,7 @@ function Products(props) {
     // Obtenemos los datos de los productos a pasar al componente Row una vez que estén listos
     useEffect(() => {
 
-        apiCall('http://localhost:3002/api/products', (data) => {
+        apiCall('https://viverofederal.up.railway.app/api/products', (data) => {
 
             setProducts(data.products);
 
@@ -40,7 +40,7 @@ function Products(props) {
     // Actualizamos los datos cuando cambia el número de página
     useEffect(() => {
 
-        apiCall('http://localhost:3002/api/products?page=' + page, (data) => {
+        apiCall('https://viverofederal.up.railway.app/api/products?page=' + page, (data) => {
 
             setProducts(data.products);
 

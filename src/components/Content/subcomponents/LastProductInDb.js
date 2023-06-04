@@ -20,7 +20,7 @@ function LastProductInDb(props) {
 
         if (props.productDetail) {
 
-            apiCall('http://localhost:3002' + props.productDetail, (data) => {
+            apiCall('https://viverofederal.up.railway.app' + props.productDetail, (data) => {
 
                 setProduct(data.product);
 
@@ -44,7 +44,7 @@ function LastProductInDb(props) {
                 <div className="card-body">
 
                     <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={"http://localhost:3002" + product.imageUrl} style={{ width: "40rem" }} alt={"Imagen de " + product.name} />
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={"https://viverofederal.up.railway.app" + product.imageUrl} style={{ width: "40rem" }} alt={"Imagen de " + product.name} />
                     </div>
 
                     <p>{product.description}</p>

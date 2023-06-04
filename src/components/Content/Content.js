@@ -27,13 +27,13 @@ function Content() {
     // Llamado a la API para recuperar los datos de los totales
     useEffect(() => {
 
-        apiCall('http://localhost:3002/api/products', (data) => {
+        apiCall('https://viverofederal.up.railway.app/api/products', (data) => {
 
             setProductsData(data);
 
         });
 
-        apiCall('http://localhost:3002/api/users', (data) => {
+        apiCall('https://viverofederal.up.railway.app/api/users', (data) => {
 
             setUsersData(data);
 
