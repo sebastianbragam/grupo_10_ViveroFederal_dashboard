@@ -105,17 +105,17 @@ function Content() {
                     <LastProductInDb productDetail={productsData.products ? productsData.products[0].detail : null} />
 
                 } />
+
                 <Route path='/categories' element={
 
                     <CategoriesInDb categories={productsData.countByCategory ? productsData.countByCategory : []} />
 
                 } />
-                <Route path='/allProducts' element={
 
-                    <Products />
+                <Route path='/allProducts' Component={Products} />
 
-                } />
                 <Route path='/search' Component={SearchProducts} />
+
                 <Route path='*' Component={NotFound} />
 
             </Routes>
