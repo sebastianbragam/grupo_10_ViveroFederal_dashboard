@@ -26,7 +26,7 @@ function SearchProducts() {
 
         setLoading([true]);
 
-        apiCall('https://viverofederal.up.railway.app/api/products?search=' + keyword, (data) => {
+        apiCall('https://viverofederal.sebastianbraga.com.ar/api/products?search=' + keyword, (data) => {
 
             setProducts(data.products);
             setLoading([false]);

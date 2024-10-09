@@ -27,13 +27,13 @@ function Content() {
     // Llamado a la API para recuperar los datos de los totales
     useEffect(() => {
 
-        apiCall('https://viverofederal.up.railway.app/api/products', (data) => {
+        apiCall('https://viverofederal.sebastianbraga.com.ar/api/products', (data) => {
 
             setProductsData(data);
 
         });
 
-        apiCall('https://viverofederal.up.railway.app/api/users', (data) => {
+        apiCall('https://viverofederal.sebastianbraga.com.ar/api/users', (data) => {
 
             setUsersData(data);
 
